@@ -1,0 +1,135 @@
+body
+  overflow-y hidden
+  width 100vw
+  height 100vh
+
+.align-center
+  text-align center  
+  
+.board
+  height 100vh
+  min-height 600px
+  width 100vw
+  background radial-gradient(ellipse at center, #4d4874 0%,#252644 90%)
+
+.thanks-to
+  display inline-block
+  margin-top 10px
+  width 100%
+  text-align center
+  color #c4bdd4
+  font-size 12px
+  
+// SCREEN ------------------------  
+.screen
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  margin auto
+  width 270px
+  height 440px
+  background-color #180e33
+  box-shadow 0 0 3vw rgba(0,0,0,.4)
+ 
+  .screen__container
+    position relative
+
+// SWIPER ------------------------  
+.swiper-container    
+  background-image url('http://damienfranco.fr/codepen/codepen_swiper_back.jpg')
+  background-size contain
+  background-repeat no-repeat
+  .swiper-wrapper
+    position relative
+    overflow initial
+    width 100%
+
+    // SLIDE
+    .swiper-slide
+      color #fff
+      height 440px
+      
+      // IMAGE
+      .img__container
+        height 52%
+        width 100%
+        
+        img
+          position absolute
+          width 100%
+          top 0
+          left 0
+      
+      // TEXT
+      .text__container
+        font-family 'Open sans', sans-serif
+        h2
+          font-size 26px
+          font-weight 300
+          margin-bottom 0
+          line-height 1.8
+          letter-spacing .1vw
+          color #c4bdd4
+        p
+          margin 0
+          color #584a7b
+  
+  // PAGINATION
+  .swiper-pagination
+    bottom 6%
+    width 100%
+    z-index 9
+    span
+      display inline-block
+      background-color #fff
+      width 6px
+      height 6px
+      margin 0 3px
+      transition all .4s ease
+
+// BUTTON ------------------------
+.button__container
+  width 100%
+  position absolute
+  bottom 14%
+  z-index 2
+  
+  button
+    display inline-block
+    border none
+    background-color #3c2075
+    color #c4bdd4
+    padding 12px 40px
+    border-radius 25px
+    text-transform uppercase
+    letter-spacing 2px
+    font-size 12px
+    cursor pointer
+
+// ACTIVE
+.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      .text__container
+        h2, p
+          display inline-block
+          width 100%
+          opacity 0
+          transform translateY(20%)
+        h2
+          transition all 1s ease
+        p
+          transition all 1s .25s ease
+    .swiper-slide-active
+      .text__container
+        h2, p
+          display inline-block
+          width 100%
+          opacity 1
+          transform translateY(0)
+        h2
+          transition all 1s ease
+        p
+          transition all 1s .25s ease

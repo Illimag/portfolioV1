@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jaemnkm
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jaemnkm.github.io
+  * I am jaemnkm (https://keybase.io/jaemnkm) on keybase.
+  * I have a public key ASDot02kKvyN_mq2CCSJUpCpgEWXimSerSyljjYdi2r-KAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e8b74da42afc8dfe6ab60824895290a98045978a649ead2ca58e361d8b6afe280a",
+      "host": "keybase.io",
+      "kid": "0120e8b74da42afc8dfe6ab60824895290a98045978a649ead2ca58e361d8b6afe280a",
+      "uid": "5c8a86f6eecdfd807bb857d392f51519",
+      "username": "jaemnkm"
+    },
+    "merkle_root": {
+      "ctime": 1543893360,
+      "hash": "c869297e265936ef38e1f20d3484af219d6e273b1e4a81cef489f86efc90b67fb847c5a9d9ddb64ad10b62cfa8556d57a30df1216c1d2acbe0254d74ffca182f",
+      "hash_meta": "7d226c49cd2f614a702f9bad82fdf9509f864d41c9180486c2fdae897543c854",
+      "seqno": 4047852
+    },
+    "service": {
+      "entropy": "7vuZH4mz2K21OoujG0lxzco3",
+      "hostname": "jaemnkm.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.10.1"
+  },
+  "ctime": 1543893374,
+  "expire_in": 504576000,
+  "prev": "4f70d7e9ef5542a6ff40b8cc7b48cab409e2ad0f5e276f3a255df676f86c23ba",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg6LdNpCr8jf5qtggkiVKQqYBFl4pknq0spY42HYtq/igKp3BheWxvYWTESpcCCMQgT3DX6e9VQqb/QLjMe0jKtAnirQ9eJ286JV32dvhsI7rEIKOhCRWKpldLMwAqnf+Qyxgk+v41747d7EjJ1XQRJPBRAgHCo3NpZ8RAv1Wn1as5p9LzfHoYRMLKnZOYUTRZ/iwSpjZnrGi1mPtxXAniW/3KR/GMf+Zzo8OBWp4R4rXEkNqswi1gViobCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKptzK4fTeLz79HwtzLq3RnwwYUA3i9FNW+jQ6svcqQbo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jaemnkm
+
+==================================================================

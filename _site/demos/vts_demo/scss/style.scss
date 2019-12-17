@@ -1,0 +1,556 @@
+// Breakpoints
+$sm: 20rem;
+$med: 48rem;
+$lg: 64rem;
+
+// variables ————>
+// colors
+$white: #f5f5f5;
+$text: #666;
+$black: #000;
+$lightblack: #333;
+$primary: slategray;
+$accent: tomato;
+$night: #2D3242;
+
+// fonts
+$base-font-family: 'Source Sans Pro', sans-serif;
+$heading-font-family: 'Source Code Pro', monospace;
+
+// sizes
+$base-line-height: 1.55;
+$heading-line-height: 1.2;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+
+// global
+*, *:before, *:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	color: $text;
+	font-family: $base-font-family;
+	font-size: 100%;
+	line-height: $base-line-height;
+}
+
+body {
+	
+		
+	#fcc_foldout_toggler, 
+	#fcc_foldout_menu, 
+	#fcc_test_message-box {
+		top: -10000px;
+		display: none !important;
+		visibility: hidden;
+	}
+
+	&.night {
+		background-color: $night;
+
+		h1, h2, h3 {
+			color: $white;
+		}
+
+		p {
+			color: $white;
+		}
+
+		nav {
+
+			&.sticky {
+				background-color: darken($night,5%);
+			}
+
+			.menu-bg {
+				background-color: darken($night,10%);
+			}
+		}
+
+		header {
+			background-image: url('http://state38.co/images/paper-circles-night.jpg');
+		}
+	}
+}
+
+label { cursor: pointer; }
+
+a {
+	text-decoration: none;
+	
+	&.button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 8.125rem;
+		margin: 1.25rem 0;
+		padding: 0.625rem 1.25rem;
+		background-color: $accent;
+		border-radius: 6.1875rem;
+		box-shadow: 0 0 1.875rem rgba($black,0.2);
+		color: $white;
+		transition: box-shadow 0.25s linear;
+		
+		&:hover {
+			box-shadow: 0 0 0.625rem rgba($black,0.05);
+		}
+	}
+}
+
+// typography
+h1, h2, h3 {
+	position: relative;
+	display: inline-block !important;
+	font-family: $heading-font-family;
+	font-weight: 600;
+	line-height: $heading-line-height;
+	margin: 0 0 $small-spacing;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+	font-weight: 300;
+	line-height: $base-line-height;
+}
+
+// navigation
+nav {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	//background-color: $primary;
+	z-index: 999;
+	
+	&.sticky {
+		background-color: $white;
+		transition: background-color 0.25s linear;
+		
+		.logo {
+			
+			.circle {
+				fill: $accent;
+				transition: fill 0.25s linear;
+			}
+			
+			.mountains {
+				fill: $white;
+				transition: fill 0.25s linear;
+			}
+		}
+		
+		.hamburger {
+			
+			> div {
+				background-color: $accent;
+				transition: background-color 0.25s linear;
+				
+				&:before, &:after {
+					background-color: $accent;
+					transition: background-color 0.25s linear;
+				}
+			}
+		}
+	}
+	
+	.logo {
+		position: relative;
+		width: 1.875rem;
+		height: 1.875rem;
+		margin: 0 0 0 20px;
+		
+		.circle {
+			fill: $primary;
+		}
+		
+		.mountains {
+			fill: $white;
+		}
+	}
+	
+	.hamburger {
+		position: relative;
+		display: block;
+		width: 60px;
+		height: 50px;
+		z-index: 999;
+
+		> div {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 2px;
+			background-color: $primary;
+			transform: translate(-50%,-50%);
+
+			&:before, &:after {
+				position: absolute;
+				content: '';
+				width: 20px;
+				height: 2px;
+				background-color: $primary;
+			}
+
+			&:before {
+				transform: translateY(-5px);
+				animation: burger1 250ms linear;
+			}
+
+			@keyframes burger1 {
+				0%   { transform: translateY(0); }
+				50%  { transform: translateY(0); }
+				100% { transform: translateY(-5px) rotate(0deg); }
+			}
+
+			&:after {
+				transform: translateY(5px);
+				animation: burger2 250ms linear;
+			}
+
+			@keyframes burger2 {
+				0%   { transform: translateY(0); }
+				50%  { transform: translateY(0); }
+				100% { transform: translateY(5px) rotate(0deg); }
+			}
+		}
+	}
+
+	.menu-bg {
+		position: fixed;
+		top: 0;
+		right: -375px;
+		width: 375px;
+		height: 100%;
+		margin: 0;
+		padding: 3rem 0;
+		background-color: transparentize($primary,0.05);
+		transition: right 150ms linear;
+		z-index: 998;
+
+		ul {
+			position: relative;
+			//display: block;
+			//height: 100%;
+			list-style-type: none;
+			
+			li {
+				position: relative;
+				//display: block;
+				margin: 5px 0;
+				padding: 0.625rem 1.25rem;
+				text-align: right;
+				
+				a {
+					//display: block;
+					font-size: 1.25rem;
+					font-weight: 400;
+					color: $white;
+					text-decoration: none;
+					
+					&:before {
+						position: absolute;
+						content: '';
+						top: 50%;
+						right: 0;
+						width: 0%;
+						height: 0.0625rem;
+						z-index: 1;
+						background-color: $white;
+						transition: width 500ms ease-in-out;
+					}
+					
+					&:hover,
+					&:focus {
+						color: $accent;
+						
+						&:before {
+							right: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		
+		.night-mode {
+			margin: 0;
+			padding: 0;
+			border: none;
+			background-color: transparent;
+			color: $white;
+			font-size: 18px;
+
+			&:hover {
+				color: $accent;
+			}
+		}
+	}
+
+	#menu {
+		display: none;
+
+		&:checked ~ .hamburger {
+
+			> div {
+				visibility: hidden;
+
+				&:before, &:after {
+					visibility: visible;
+					background-color: $accent;
+					transform-origin: center center;
+					transform: translateY(0);
+					transition: all 250ms linear;
+				}
+
+				&:before {
+					transform: rotate(-45deg);
+					animation: burger3 250ms linear;
+				}
+
+				@keyframes burger3 {
+					0%   { transform: translateY(0); }
+					50%  { transform: translateY(0); }
+					100% { transform: translateY(0) rotate(-45deg); }
+				}
+
+				&:after {
+					transform: rotate(45deg);
+					animation: burger4 250ms linear;
+				}
+
+				@keyframes burger4 {
+					0%   { transform: translateY(0); }
+					50%  { transform: translateY(0); }
+					100% { transform: translateY(0) rotate(45deg); }
+				}
+			}
+		}
+
+		&:checked ~ .menu-bg {
+			right: 0;
+			transition: right 150ms linear;
+		}
+	}
+}
+
+// header
+header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 50px 0 0;
+	background-image: url('http://state38.co/images/paper-circles.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	h1 {
+		color: $primary;
+		font-weight: 400;
+		text-shadow: 0 0 2rem rgba($primary,0.3);
+	}
+}
+
+// section / main
+section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0;
+	padding: 3.125rem 0;
+	background-color: white;
+	
+	article {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		margin-bottom: 3.125rem;
+		
+		@media (min-width: $med) {
+			flex-direction: row;
+			width: 75%;
+		}
+		
+		@media (min-width: $lg) {
+			width: 55%;
+		}
+		
+		.thumbnail {
+			position: relative;
+			display: flex;
+			width: 100%;
+			height: 12.5rem;
+			margin-bottom: 1.25rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			box-shadow: 0 0 0.625rem rgba(black,0.2);
+			
+			&.th-1 {
+				background-image: url('http://state38.co/images/portfolio-th-1.png');
+			}
+			
+			&.th-2 {
+				background-image: url('http://state38.co/images/portfolio-th-2.png');
+			}
+			
+			&.th-3 {
+				background-image: url('http://state38.co/images/portfolio-th-3.png');
+			}
+			
+			&.th-4 {
+				background-image: url('http://state38.co/images/portfolio-th-4.png');
+			}
+			
+			&.th-5 {
+				background-image: url('http://state38.co/images/portfolio-th-5.png');
+			}
+			
+			@media (min-width: $med) {
+				width: 65%;
+				height: 9.375rem;
+				margin-top: 0.625rem;
+				order: 2;
+			}
+		}
+		
+		.content {
+			
+			@media (min-width: $med) {
+				padding-right: 1.25rem;
+			}
+			
+			h2 {
+				display: inline-block;
+
+				.background-wrapper {
+					position: relative;
+					display: inline;
+					background-color: none;
+
+					> span {
+						position: absolute;
+						bottom: 0.25rem;
+						left: 0rem;
+						width: 90%;
+						height: 50%;
+						background-color: lighten($accent,5%);
+						z-index: -1;
+					}
+				}
+			}
+
+			.skills {
+				position: relative;
+				display: block;
+				margin: 1.5rem 0 0.625rem;
+
+				> div {
+					position: relative;
+					margin: 0 0 0.5rem;
+					color: lighten($text,10%);
+					font-size: 0.6875rem;
+					text-transform: uppercase;
+				}
+
+				span {
+					position: relative;
+					display: inline-block;
+					margin: 0 0.5rem 0.5rem 0;
+					padding: 0.3125rem 1rem;
+					background-color: $primary;
+					border-radius: 6.1875rem;
+					color: $white;
+					font-size: 0.75rem;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+	
+	> button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 15.625rem;
+		margin: 1.875rem 0;
+		padding: 1rem 0;
+		background-color: $white;
+		border: none;
+		border-radius: 6.1875rem;
+		color: $primary;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+	}
+	
+	&.about {
+		padding: 4.6875rem 0;
+		background-color: darken($primary, 30%);
+		font-family: $heading-font-family;
+		line-height: 1.75;
+
+		> article {
+			flex-direction: column;
+			margin-bottom: 0;
+
+			@media (min-width: $med) {
+				width: 80%;
+			}
+
+			> div {
+				color: $accent;
+			}
+
+			p {
+				margin: 1rem 0 1rem 2rem;
+				color: $white;
+			}
+		}
+	}
+}
+
+footer {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 1.25rem 0;
+	background-color: $primary;
+	
+	.contact {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		
+		> a {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 25%;
+			color: transparentize($white,0.2);
+		}
+	}
+}

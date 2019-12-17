@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_blank">
+</head>
+<title>Loading...</title>
+<a id="forkme" href="https://github.com/matteobrusa/md-styler" style="display:none">
+	<img style="position: absolute; top: 0; right: 0; border: 0; margin: 0; z-index:1" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+</a>
+
+<xmp theme="united" style="display:none;">
+</xmp>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (results==null){
+		   return null;
+		}
+		else{
+		   return results[1] || 0;
+		}
+	}
+	url= $.urlParam('url'); 
+	
+	if (url==null) {
+		$("title").html("Markdown styler");
+		url= "https://matteobrusa.github.io/md-styler/README.md";
+		$("#forkme").fadeIn();
+	}
+	
+	if (url.indexOf("%3A%2F%2F")!=-1) 
+		url= decodeURIComponent(url);
+	
+	if (url.indexOf("dropbox.com")!=-1 && url.indexOf("?dl=0")!=-1)
+		url= url.replace("dl=0", "dl=1");
+	
+	// Fat ugly hack for old Safari
+	if (url.indexOf("https")==0) {
+		ua= navigator.userAgent;
+		if (ua.indexOf('Safari') != -1 && ua.indexOf('Chrome') == -1) {
+			if (ua.indexOf("Version/9.")>0 ||
+			    ua.indexOf("Version/8.")>0 ||
+			    ua.indexOf("Version/7.")>0) {
+				url= url.replace("https", "http");
+				console.log("Ugly hack for: "+ua);
+			}
+		}
+	}
+
+	theme= $.urlParam("theme");
+	if (theme!=null){
+		$("xmp").attr("theme", theme);
+	}
+	
+	errorHandler= function() {
+    		alert( "error loading "+url );
+  	}
+	
+	jqXHR= $.get("//cors-anywhere.herokuapp.com/"+ url, function (response) {
+		$("xmp").html(response);
+		if (0==response.indexOf("<!"))
+			errorHandler();
+		else {
+			title= url;
+			p= title.lastIndexOf('/');
+			if (p>0) title= title.substring(p+1);
+			p= title.indexOf('?');
+			if (p>0) title= title.substring(0, p);
+			$("title").html(title);
+
+			$.getScript("https://cdn.rawgit.com/arturadib/strapdown/gh-pages/v/0.2/strapdown.js")
+		}
+	});
+	jqXHR.fail(errorHandler);
+</script>
+</html>

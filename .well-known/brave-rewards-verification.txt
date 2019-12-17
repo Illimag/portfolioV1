@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: jaemnkm.com
+Token: ca0ad4640bec83ec0666d0cb2d6112bffce10b0546d758b38c355c90998dd517

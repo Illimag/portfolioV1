@@ -1,0 +1,210 @@
+body {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+}
+.align-center {
+  text-align: center;
+}
+.board {
+  height: 100%;
+
+  width: 100vw;
+  background: radial-gradient(ellipse at center, #eee 0%, #ddd 90%);
+}
+.thanks-to {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  color: #c4bdd4;
+  font-size: 12px;
+}
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  box-shadow: 0 0 3vw rgba(0,0,0,0.4);
+}
+.screen .screen__container {
+  position: relative;
+  height:100%;
+}
+.swiper-container {
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.swiper-container .swiper-wrapper {
+  position: relative;
+  overflow: initial;
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  color: #fff;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide .img__container {
+  height: 52%;
+  width: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide .img__container img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container {
+  font-family: 'Open sans', sans-serif;
+
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container h2 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 0;
+  line-height: 1.8;
+  letter-spacing: 0.1vw;
+  color: #c4bdd4;
+
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container p {
+  margin: 0;
+  color: #584a7b;
+
+}
+.swiper-container .swiper-pagination {
+  bottom: 6%;
+  width: 100%;
+  z-index: 9;
+
+}
+.swiper-container .swiper-pagination span {
+  display: inline-block;
+
+  width: 6px;
+  height: 6px;
+  margin: 0 3px;
+  transition: all 0.4s ease;
+}
+.button__container {
+  width: 100%;
+  position: absolute;
+  bottom: 14%;
+  z-index: 2;
+}
+.button__container button {
+  display: inline-block;
+  border: none;
+  background-color: #3c2075;
+  color: #c4bdd4;
+  padding: 12px 40px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container h2,
+.swiper-container .swiper-wrapper .swiper-slide .text__container p {
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container h2 {
+  transition: all 1s ease;
+
+}
+.swiper-container .swiper-wrapper .swiper-slide .text__container p {
+  transition: all 1s 0.25s ease;
+}
+.swiper-container .swiper-wrapper .swiper-slide-active .text__container h2,
+.swiper-container .swiper-wrapper .swiper-slide-active .text__container p {
+  display: inline-block;
+  width: 100%;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.swiper-container .swiper-wrapper .swiper-slide-active .text__container h2 {
+  transition: all 1s ease;
+}
+.swiper-container .swiper-wrapper .swiper-slide-active .text__container p {
+  transition: all 1s 0.25s ease;
+}
+
+.swiper-pagination-bullet .swiper-pagination-bullet-active{
+  background-color: #000;
+}
+
+.swiper-pagination-bullet{
+  background-color: #000;
+}
+
+.swiper-container .swiper-container-initialized .swiper-container-horizontal .swiper-container-android{
+  height:100%;
+}
+
+.swiper-container .swiper-pagination{
+  bottom:150px;
+}
+
+.test1{
+  background-color:black;
+  height:50px;
+  width:50px;
+  position: absolute;
+  display: inline-block;
+  bottom:50px;
+  left:35px;
+}
+
+.test2{
+  background-color:black;
+  height:50px;
+  width:50px;
+  position: absolute;
+  display: inline-block;
+  bottom:50px;
+  left:95px;
+}
+
+.test3{
+  background-color:black;
+  height:50px;
+  width:50px;
+  position: absolute;
+  display: inline-block;
+  bottom:50px;
+  left:155px;
+}
+
+.test4{
+  background-color:black;
+  height:50px;
+  width:50px;
+  position: absolute;
+  display: inline-block;
+  bottom:50px;
+  left:215px;
+}
+
+.test5{
+  background-color:black;
+  height:50px;
+  width:50px;
+  position: absolute;
+  display: inline-block;
+  bottom:50px;
+  left:275px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1, user-scalable=no" name="viewport">
+	<meta content="RDhK1nJPEXjReh3N6Lhw1JC6Q8NjVoJyyDygiM6LxPw" name="google-site-verification"><!-- Chrome, Firefox OS, Opera and Vivaldi -->
+	<meta content="#000" name="theme-color"><!-- Windows Phone -->
+	<meta content="#000" name="msapplication-navbutton-color"><!-- iOS Safari -->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="default" name="apple-mobile-web-app-status-bar-style">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+  <title>Portfolio</title>
+
+  <!-- Redirects to desktop version index file -->
+<script type="text/javascript">
+	if (screen.width >= 699) {
+	document.location = "desktop/code/index_desktop.html";
+	}
+	</script>
+
+  
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css" />
+  
+  <link rel="stylesheet" href="css_main/style.css">
+
+
+	<style>
+
+		.iframe-wrapper{
+			background: url("background_test0.png");
+			width: 100%;
+			background-repeat: no-repeat ;
+			background-position: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+
+		.nav-top{
+			height:50px;
+			width:100%;
+			top:0;
+			position: absolute;
+			z-index: 1;
+			box-shadow:  0px 0px 5px #000;
+			background-color: #eee;
+		}
+
+		.back-button{
+			height:100%;
+			width: 30%;
+			left:0;
+			position: absolute;
+			z-index: 2;
+		}
+
+		.back-button-text{
+			text-decoration: none ;
+			color: #000;
+			font-size: 25px;
+			margin-top: 10px;
+			margin-left: 10px;
+			position: absolute;
+		}
+
+
+		
+	</style>
+
+</head>
+
+<body>
+
+		<div class="nav-top">
+				<div class="back-button"><a class="back-button-text" href="../../index.html" style="font-weight: 600;"><span style="color:lightblue;font-weight:600"><</span> Back</a></div>
+			</div>
+  <div ng-app="app" >
+
+
+
+<tab-shell >
+
+        <tab icon="test1" heading="Igloo">
+<div class="iframe-wrapper">
+	<iframe src="section0/design_portfolio.html"></iframe>
+</div>
+</tab>
+
+<tab icon="test2" heading="Lemon">
+	<div class="iframe-wrapper">
+		<iframe src="section1/develop_portfolio.html" ></iframe>
+	</div>
+</tab>
+	
+<tab icon="test2" heading="Jazz">
+		<div class="iframe-wrapper">
+			<iframe src="https://jkim17.myportfolio.com/" ></iframe>
+		</div>
+	</tab>
+
+	</tab-shell>
+</div>
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+
+<script src="js_main/index.js"></script>
+
+</body>
+</html>
